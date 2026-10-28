@@ -1,0 +1,96 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    display-drun: "⚓ Apps";
+    display-run: "☠ Run";
+    display-window: "Windows";
+    drun-display-format: "{name}";
+    font: "JetBrainsMono Nerd Font Bold 12";
+}
+
+* {
+    navy:      #0e1630;
+    navy2:     #18244d;
+    gold:      #e8b04a;
+    palegold:  #f5d78e;
+    flame:     #f07a2a;
+    parchment: #f3e3c0;
+    dim:       #8a7a5a;
+
+    background-color: transparent;
+    text-color: @parchment;
+}
+
+window {
+    width: 620px;
+    padding: 16px;
+    border: 2px;
+    border-color: @gold;
+    border-radius: 14px;
+    background-color: rgba(14, 22, 48, 0.94);
+}
+
+mainbox {
+    spacing: 12px;
+    children: [ inputbar, listview, mode-switcher ];
+}
+
+inputbar {
+    padding: 10px 14px;
+    spacing: 10px;
+    border: 1px;
+    border-color: @gold;
+    border-radius: 10px;
+    background-color: @navy2;
+    children: [ prompt, entry ];
+}
+
+prompt { text-color: @palegold; }
+
+entry {
+    placeholder: "Search the Grand Line...";
+    placeholder-color: @dim;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    spacing: 4px;
+    fixed-height: true;
+    scrollbar: false;
+}
+
+element {
+    padding: 8px 12px;
+    spacing: 12px;
+    border-radius: 8px;
+}
+
+element selected.normal {
+    background-image: linear-gradient(to bottom, #f5d78e, #e8b04a);
+    text-color: @navy;
+}
+
+element-icon {
+    size: 28px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+}
+
+mode-switcher { spacing: 8px; }
+
+button {
+    padding: 6px;
+    border: 1px;
+    border-color: rgba(232, 176, 74, 0.55);
+    border-radius: 8px;
+    text-color: @dim;
+}
+
+button selected {
+    background-color: @gold;
+    text-color: @navy;
+}
